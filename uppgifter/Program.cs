@@ -4,66 +4,52 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace uppg8
+namespace uppg5
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            Console.Write("Enter your grade ");
+            int grade = Convert.ToInt32(Console.ReadLine());
 
+            if (grade == 0)
             {
-
-                {
-                    Console.Write("Please enter your age: ");
-                    string ageInput = Console.ReadLine();
-                    int Age = int.Parse(ageInput);
-                    const int LegalAge = 18;
-
-                    if (Age >= LegalAge)
-                    {
-                        Console.WriteLine("You are an adult.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("You are under the legal age.");
-                    }
-
-                    int Counter = 1;
-
-                    while (Counter <= 5)
-                    {
-                        Console.WriteLine(Counter);
-                        Counter++;
-                    }
-
-                    switch (Counter)
-                    {
-                        case 1:
-                            Console.WriteLine("One");
-                            break;
-                        case 2:
-                            Console.WriteLine("Two");
-                            break;
-                        case 3:
-                            Console.WriteLine("Three");
-                            break;
-                        case 4:
-                            Console.WriteLine("Four");
-                            break;
-                        case 5:
-                            Console.WriteLine("Five");
-                            break;
-                        default:
-                            Console.WriteLine("Enter a number between 18-99");
-                            break;
-                    }
-
-                    string name = "John";
-                    Console.WriteLine($"Welcome, {name}! The loop has completed, and the final value of Counter was {Counter - 1}.");
-
-
-                }
+                Console.WriteLine("Fail");
             }
+            else if (grade == 1)
+            {
+                Console.WriteLine("Needs improvement");
+            }
+            switch (grade)
+            {
+                case 0:
+                    Console.WriteLine("Fail");
+                    break;
+
+
+                case 1:
+                    Console.WriteLine("Needs improvement");
+                    break;
+                case 2:
+                    Console.WriteLine("ok");
+                    break;
+                case 3:
+                    Console.WriteLine("Satisfactory");
+                    break;
+                case 4:
+                    Console.WriteLine("Good");
+                    break;
+                case 5:
+                    Console.WriteLine("Excellent");
+                    break;
+                
+                    
+                default:
+                    Console.WriteLine("Invalid, enter a value between 0 and 5");
+                    break;
+            }
+            Console.ReadLine();
         }
     }
 }
