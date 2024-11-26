@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp13
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //    if (age >= 0)
+            //}
+            //        Console.WriteLine("Valid");
+            //   {
+            //    else
+            //    }
+            //       Console.WriteLine("Invalid");
+            //    {
+
+            //        Condition ? true : False 
+            //user input age 
+            Console.Write("Whats your age ");
+            String ageInput = Console.ReadLine();
+            int age = Convert.ToInt32(ageInput);
+
+            if (age >= 18)
+            {
+                Console.WriteLine("you can vote");
+            }
+            else
+            {
+                Console.WriteLine("You can`t vote");
+            }
+            Console.ReadKey();  
+        }
+    }
+}
