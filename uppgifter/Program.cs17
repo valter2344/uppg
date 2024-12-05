@@ -1,0 +1,107 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace uppg177
+{
+    class Program
+    {
+        private static readonly Dictionary<string, string> Subjects = new Dictionary<string, string>();
+
+        static void Main()
+        {
+            bool running = true;
+
+            while (running)
+            {
+                DisplayMenu();
+                running = HandleUserChoice();
+            }
+
+            Console.WriteLine("Thank you for using the program. Goodbye!");
+        }
+
+        private static void DisplayMenu()
+        {
+            Console.WriteLine("\nMenu Options:");
+            Console.WriteLine("1 - Add or update a subject");
+            Console.WriteLine("2 - Remove a subject");
+            Console.WriteLine("3 - Display all subjects");
+            Console.WriteLine("4 - Exit");
+        }
+
+        private static bool HandleUserChoice()
+        {
+            Console.Write("Select an option (1-4): ");
+            string input = Console.ReadLine()?.Trim();
+
+            switch (input)
+            {
+                case "1":
+                    AddOrUpdateSubject();
+                    return true;
+                case "2":
+                    RemoveSubject();
+                    return true;
+                case "3":
+                    DisplaySubjects();
+                    return true;
+                case "4":
+                    return false;
+                default:
+                    Console.WriteLine("Invalid input. Please select a number between 1 and 4.");
+                    return true;
+            }
+        }
+
+        private static void AddOrUpdateSubject()
+        {
+            Console.Write("Enter the subject name: ");
+            string subject = Console.ReadLine()?.Trim() ?? string.Empty;
+
+            Console.Write("Enter the teacher's name: ");
+            string teacher = Console.ReadLine()?.Trim() ?? string.Empty;
+
+            if (Subjects.ContainsKey(subject))
+            {
+                Subjects[subject] = teacher;
+                Console.WriteLine($"Subject '{subject}' updated to teacher '{teacher}'.");
+            }
+            else
+            {
+                Subjects.Add(subject, teacher);
+                Console.WriteLine($"Subject '{subject}' added with teacher '{teacher}'.");
+            }
+        }
+
+        private static void RemoveSubject()
+        {
+            Console.Write("Enter the subject name to remove: ");
+            string subject = Console.ReadLine()?.Trim() ?? string.Empty;
+
+            if (Subjects.Remove(subject))
+            {
+                Console.WriteLine($"Subject '{subject}' removed successfully.");
+            }
+            else
+            {
+                Console.WriteLine($"Subject '{subject}' not found.");
+            }
+        }
+
+        private static void DisplaySubjects()
+        {
+            if (Subjects.Count == 0)
+            {
+                Console.WriteLine("No subjects found.");
+                return;
+            }
+
+            Console.WriteLine("\nSubjects and their teachers:");
+            foreach (var subject in Subjects)
+            {
+                Console.WriteLine($"- {subject.Key}: {subject.Value}");
+            }
+        }
+    }
+}
+
