@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace uppg18
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        { Program program = new Program(); Console.Write("Enter the width of the triangle: "); if (!double.TryParse(Console.ReadLine(), out double width)) { Console.WriteLine("Invalid input for width."); return; } Console.Write("Enter the height of the triangle: "); if (!double.TryParse(Console.ReadLine(), out double height)) { Console.WriteLine("Invalid input for height."); return; } double area = program.CalculateArea(width, height); Console.WriteLine($"The area of the triangle is: {area}"); } double CalculateArea(double width, double height)
+        {
+            return 0.5 * width * height;
+
+
+
+
+        }
+    } 
+}
+           

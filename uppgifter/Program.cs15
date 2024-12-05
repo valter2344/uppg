@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace uppg1._5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] numbers = {5, 10, 20, 25, 30 };
+            int max = 0;
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] > max)
+                {
+                    max = numbers[i];
+                }
+            }
+            Console.WriteLine($"The maximum value in the array is: {max}");
+
+
+
+            Console.ReadLine();
+        }
+    }
+}
