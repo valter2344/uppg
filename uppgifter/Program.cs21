@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace uppg21
+{ using System;
+
+internal class Program
+{
+    static void Main(string[] args)
+    {
+        int age = 34; // Corrected the assignment operator
+
+        if (age > 50) // Moved this condition to the top
+        {
+            Console.WriteLine("Over 50");
+        }
+        else if (age > 30) // This condition should come next
+        {
+            Console.WriteLine("Over 30");
+        }
+        else if (age > 18) // This condition should come last
+        {
+            Console.WriteLine("Over 18");
+        }
+
+        Console.ReadLine();
+        }
+    }
+}
